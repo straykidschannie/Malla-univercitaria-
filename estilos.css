@@ -1,1 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffe6f0;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
 
+h1 {
+    color: #c2185b;
+}
+
+p {
+    color: #7a2c4a;
+}
+
+.malla {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.ramo {
+    background-color: #f8bbd0;
+    border: 2px solid #f48fb1;
+    border-radius: 12px;
+    padding: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+    user-select: none;
+    font-size: 14px;
+    font-weight: bold;
+    color: #4a0033;
+}
+
+.ramo:hover {
+    transform: scale(1.05);
+}
+
+.ramo.bloqueado {
+    background-color: #f3d1df;
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.ramo.aprobado {
+    background-color: #c8e6c9;
+    border-color: #66bb6a;
+    color: #1b5e20;
+}
