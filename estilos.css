@@ -1,51 +1,62 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #ffe6f0;
-    text-align: center;
-    margin: 0;
-    padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #ffe6f0;
+  margin: 0;
+  padding: 20px;
 }
 
 h1 {
-    color: #c2185b;
+  text-align: center;
+  color: #c2185b;
 }
 
-p {
-    color: #7a2c4a;
+h2 {
+  color: #ad1457;
+  margin-top: 40px;
 }
 
-.malla {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 15px;
-    margin-top: 30px;
+.year {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-.ramo {
-    background-color: #f8bbd0;
-    border: 2px solid #f48fb1;
-    border-radius: 12px;
-    padding: 12px;
-    cursor: pointer;
-    transition: all 0.3s;
-    user-select: none;
-    font-size: 14px;
-    font-weight: bold;
-    color: #4a0033;
+.semester {
+  background: #ffd1e3;
+  border-radius: 12px;
+  padding: 15px;
+  width: 280px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-.ramo:hover {
-    transform: scale(1.05);
+.semester h3 {
+  text-align: center;
+  color: #880e4f;
 }
 
-.ramo.bloqueado {
-    background-color: #f3d1df;
-    opacity: 0.4;
-    cursor: not-allowed;
+.course {
+  background: #f8bbd0;
+  border: 2px solid #c2185b;
+  border-radius: 8px;
+  padding: 8px;
+  margin: 6px 0;
+  cursor: pointer;
+  transition: 0.3s;
+  text-align: center;
 }
 
-.ramo.aprobado {
-    background-color: #c8e6c9;
-    border-color: #66bb6a;
-    color: #1b5e20;
+.course:hover {
+  background: #f48fb1;
+}
+
+.course.locked {
+  background: #f3a6c3;
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.course.approved {
+  background: #c2185b;
+  color: white;
+  border-color: #880e4f;
 }
