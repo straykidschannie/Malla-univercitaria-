@@ -1,16 +1,136 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Malla interactiva Pedagogía Matemática</title>
-    <link rel="stylesheet" href="estilos.css">
+  <meta charset="UTF-8">
+  <title>Malla Interactiva Pedagogía en Matemática</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <h1>Malla Curricular Interactiva</h1>
-<p>Toca un ramo para aprobarlo. Los ramos que dependan de él se desbloquearán automáticamente.</p>
+<p>Haz clic en un ramo para marcarlo como aprobado y desbloquear sus dependencias.</p>
 
-<div class="malla" id="malla"></div>
+<div id="malla">
+
+<!-- PRIMER AÑO -->
+<h2>Primer Año</h2>
+<div class="year">
+
+<div class="semester">
+<h3>I Semestre</h3>
+<div class="course" data-id="calculo1">Cálculo I</div>
+<div class="course" data-id="algebra">Álgebra</div>
+<div class="course" data-id="geometria">Geometría analítica y vectorial</div>
+<div class="course approved">Antropología Cristiana</div>
+</div>
+
+<div class="semester">
+<h3>II Semestre</h3>
+<div class="course locked" data-id="calculo2" data-prereq="calculo1">Cálculo II</div>
+<div class="course locked" data-id="algebraLineal1" data-prereq="algebra,geometria">Álgebra Lineal I</div>
+<div class="course" data-id="programacion">Programación</div>
+<div class="course approved">Ética Cristiana</div>
+<div class="course approved">Formación Fundamental I</div>
+</div>
+
+</div>
+
+<!-- SEGUNDO AÑO -->
+<h2>Segundo Año</h2>
+<div class="year">
+
+<div class="semester">
+<h3>III Semestre</h3>
+<div class="course locked" data-id="calculo3" data-prereq="calculo2">Cálculo III</div>
+<div class="course locked" data-id="teoriaNumeros" data-prereq="algebra">Teoría de números</div>
+<div class="course locked" data-id="metodos" data-prereq="calculo2,programacion">Métodos numéricos y ecuaciones diferenciales</div>
+<div class="course" data-id="estrategiasAcceso">Estrategias discursivas para acceder al conocimiento disciplinar</div>
+</div>
+
+<div class="semester">
+<h3>IV Semestre</h3>
+<div class="course locked" data-id="analisisReal" data-prereq="calculo3">Análisis real</div>
+<div class="course locked" data-id="estructuras" data-prereq="teoriaNumeros">Estructuras algebraicas I</div>
+<div class="course" data-id="practicaInicial">Práctica docente inicial</div>
+<div class="course" data-id="tallerAdolescente">Taller de aprendizaje y desarrollo adolescente</div>
+<div class="course" data-id="diversidad">Educar en y para la diversidad</div>
+</div>
+
+</div>
+
+<!-- TERCER AÑO -->
+<h2>Tercer Año</h2>
+<div class="year">
+
+<div class="semester">
+<h3>V Semestre</h3>
+<div class="course locked" data-id="didacticaCalculo" data-prereq="analisisReal">Didáctica del cálculo</div>
+<div class="course locked" data-id="didacticaNumeros" data-prereq="estructuras">Didáctica de los sistemas numéricos</div>
+<div class="course" data-id="geoEuclidiana">Geometría euclidiana plana</div>
+<div class="course locked" data-id="estadistica1" data-prereq="calculo2">Estadística I</div>
+<div class="course approved">Formación Fundamental II</div>
+</div>
+
+<div class="semester">
+<h3>VI Semestre</h3>
+<div class="course locked" data-id="geo3d" data-prereq="geoEuclidiana">Geometría 3D y Geometría no euclidiana</div>
+<div class="course locked" data-id="didacticaEstadistica" data-prereq="estadistica1">Didáctica de la estadística</div>
+<div class="course locked" data-id="practicaComunitaria" data-prereq="practicaInicial,didacticaNumeros">Práctica comunitaria</div>
+<div class="course">Psicología social aplicada</div>
+<div class="course">Fundamentos filosóficos y sociales de la educación</div>
+<div class="course" data-id="ingles1">Inglés I</div>
+</div>
+
+</div>
+
+<!-- CUARTO AÑO -->
+<h2>Cuarto Año</h2>
+<div class="year">
+
+<div class="semester">
+<h3>VII Semestre</h3>
+<div class="course">Optativo I</div>
+<div class="course locked" data-id="didacticaGeo" data-prereq="geo3d,didacticaCalculo">Didáctica de la geometría</div>
+<div class="course locked" data-id="estadistica2" data-prereq="estadistica1">Estadística II</div>
+<div class="course" data-id="planificacion">Teoría y planificación curricular</div>
+<div class="course">Políticas públicas educativas</div>
+<div class="course" data-id="estrategiasComunicar">Estrategias discursivas para comunicar y enseñar</div>
+<div class="course locked" data-id="ingles2" data-prereq="ingles1">Inglés II</div>
+</div>
+
+<div class="semester">
+<h3>VIII Semestre</h3>
+<div class="course locked" data-id="usoTec" data-prereq="didacticaGeo">Uso de tecnologías para la enseñanza de la matemática</div>
+<div class="course locked" data-id="didacticaProb" data-prereq="didacticaEstadistica,estadistica2">Didáctica de la probabilidad e inferencia</div>
+<div class="course locked" data-id="practicaIntermedia" data-prereq="practicaComunitaria">Práctica docente intermedia</div>
+<div class="course">Evaluación del y para el aprendizaje</div>
+<div class="course locked" data-id="ingles3" data-prereq="ingles2">Inglés III</div>
+</div>
+
+</div>
+
+<!-- QUINTO AÑO -->
+<h2>Quinto Año</h2>
+<div class="year">
+
+<div class="semester">
+<h3>IX Semestre</h3>
+<div class="course">Optativo II</div>
+<div class="course locked" data-id="historia" data-prereq="practicaIntermedia">Historia y epistemología de la matemática</div>
+<div class="course locked" data-id="tallerInvestigacion" data-prereq="estrategiasComunicar,didacticaProb">Taller de investigación en didáctica de la matemática</div>
+<div class="course locked" data-id="titulo" data-prereq="usoTec,didacticaProb">Trabajo de título</div>
+<div class="course locked" data-id="identidad" data-prereq="practicaIntermedia">Identidad profesional docente</div>
+<div class="course locked" data-id="ingles4" data-prereq="ingles3">Inglés IV</div>
+</div>
+
+<div class="semester">
+<h3>X Semestre</h3>
+<div class="course locked" data-id="practicaFinal" data-prereq="historia,tallerInvestigacion,titulo,identidad,practicaIntermedia">Práctica docente final</div>
+</div>
+
+</div>
+
+</div>
 
 <script src="script.js"></script>
 </body>
